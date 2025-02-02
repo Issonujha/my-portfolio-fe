@@ -73,3 +73,9 @@
 .heading {
     margin-top: 110px;
 }
+
+.error {
+    color: red;
+    font-size: 0.9em;
+    margin-top: 5px;
+}

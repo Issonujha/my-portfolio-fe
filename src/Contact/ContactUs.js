@@ -7,6 +7,7 @@ function ContactUs({ isDarkMode }) {
     const [email, setEmail] = useState('');
     const [message, setMessage] = useState('');
     const [sending, setSending] = useState(false);
+    const [error, setError] = useState('');
 
     const sendEmail = async () => {
         setSending(true);
@@ -29,11 +30,23 @@ function ContactUs({ isDarkMode }) {
             const result = await res.text();
             setResponse(result);
         } catch (error) {
+            setError(error + " Please try again later.");
             console.error("Error:", error);
         }
-        console.log(response)
+        console.log(response);
+        resetForm();
         setSending(false);
     }
+
+    const resetForm = () => {
+        setName('');
+        setEmail('');
+        setMessage('');
+        setTimeout(() => {
+            setError('');
+        }, 5000); // 5000ms = 5 seconds
+    };
+
 
     return (
         <>
@@ -108,6 +121,7 @@ function ContactUs({ isDarkMode }) {
                     </div>
                 </div>
             </div>
+            <span className='error'>{error}</span>
         </>
     );
 }

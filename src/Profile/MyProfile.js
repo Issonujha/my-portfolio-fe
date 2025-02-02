@@ -2,7 +2,7 @@ import { useState } from "react";
 import "./MyProfile.css";
 import ProjectCard from "./ProjectCard/ProjectCard";
 
-function MyProfile({ callProjectData, projectData, selectedTab, isDarkMode }) {
+function MyProfile({ error, callProjectData, projectData, selectedTab, isDarkMode }) {
     const [isCalled, setIscalled] = useState(false);
 
     if (selectedTab === 'profile' && !isCalled) {
@@ -24,6 +24,7 @@ function MyProfile({ callProjectData, projectData, selectedTab, isDarkMode }) {
                     />
                 ))}
             </div>
+            <span className={`error ${isDarkMode ? 'dark-mode' : ''}`}>{error}</span>
         </>
     );
 }

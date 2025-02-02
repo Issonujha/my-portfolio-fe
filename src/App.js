@@ -12,6 +12,7 @@ function App() {
 
   const [selectedTab, setSelectedTab] = useState('home');
   const [projects, setProjectData] = useState([]);
+  const [error, setError] = useState('');
 
 
   // ✅ Reusable API fetching function
@@ -22,6 +23,7 @@ function App() {
       setProjectData(response.data);
       console.log("Project data fetched successfully:", response.data);
     } catch (error) {
+      setError("Error fetching project data. Please try again later.");
       console.error("Error fetching project data:", error);
     }
   };
@@ -79,6 +81,7 @@ function App() {
         />}
       {selectedTab === 'profile' &&
         <MyProfile
+          error={error}
           callProjectData={fetchProjectData}
           projectData={projects}
           selectedTab={selectedTab}
