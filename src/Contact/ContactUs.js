@@ -57,7 +57,7 @@ function ContactUs({ isDarkMode }) {
                                 type="email"
                                 id="email"
                                 className="form-field"
-                                placeholder="Enter your email address"
+                                placeholder="Enter your email"
                                 required
                                 onChange={(e) => setEmail(e.target.value)}
                             />
