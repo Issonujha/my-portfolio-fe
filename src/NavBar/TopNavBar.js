@@ -46,7 +46,7 @@ function TopNavBar({ toggleDarkMode, isDarkMode, isDropdownOpen, toggleDropdown,
             <ul className="menu">
                 <li className="menu-item">
                     <button className="profile-logo" onClick={() => setSelectedTab('profile')}>
-                        <img src="https://media.licdn.com/dms/image/v2/D4D03AQF01zztSQcV-A/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1688377578139?e=1740614400&v=beta&t=wqPOdEoznTMSiVFff37Ob4Ao_nGouU-6pCf7OJUOKFo" alt="SJ" width={40} className="profile-logo" />
+                        <img src="https://myportfoliobucketdata.s3.us-east-2.amazonaws.com/public/emp/a6cc35e0-aa34-4078-b15d-bb80f53ac179/1688377578139.jpg" alt="SJ" width={40} className="profile-logo" />
                     </button>
                     <span>Sonu Jha</span>
                 </li>

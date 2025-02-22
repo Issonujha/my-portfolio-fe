@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from 'react';
-import axios from 'axios';
 import './App.css';
 import TopNavBar from './NavBar/TopNavBar';
 import Profile from './Profile/Profile';
@@ -14,12 +13,10 @@ function App() {
   const [projects, setProjectData] = useState([]);
   const [error, setError] = useState('');
 
-
-  // ✅ Reusable API fetching function
   const fetchProjectData = async () => {
     try {
       console.log("Project data fetched started");
-      const response = await axios.get("https://api.sonujha.in/projects/all");
+      const response = await fetch("https://api.sonujha.in/projects/all");
       setProjectData(response.data);
       console.log("Project data fetched successfully:", response.data);
     } catch (error) {
@@ -28,7 +25,6 @@ function App() {
     }
   };
 
-  // ✅ Call the function inside useEffect to fetch on page load
   useEffect(() => {
     fetchProjectData();
   }, []);
