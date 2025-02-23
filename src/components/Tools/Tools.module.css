@@ -1,0 +1,41 @@
+.container {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  width: 100%;
+  margin-top: 2rem;
+}
+
+.commonTools {
+  display: flex; /* flex */
+  position: fixed;
+  bottom: 1rem;
+  flex-direction: row;
+  align-items: center; /* items-center */
+  gap: 8px; /* gap-2 */
+  padding: 8px; /* p-2 */
+  border-radius: 16px; /* rounded-2xl */
+  background-color: rgba(255, 255, 255, 0.1); /* bg-white/10 */
+  backdrop-filter: blur(12px); /* backdrop-blur-md */
+  border: 0.8px solid rgba(255, 255, 255, 0.2); /* border border-white/20 */
+  box-shadow: 0px 10px 15px -3px rgba(0, 0, 0, 0.1), 0px 4px 6px -4px rgba(0, 0, 0, 0.1); /* shadow-lg */
+}
+
+
+
+
+.tool {
+  width: 40px;
+  height: 40px;
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.2s;
+}
+
+.tool:hover {
+  transform: translateY(-2px);
+}
+

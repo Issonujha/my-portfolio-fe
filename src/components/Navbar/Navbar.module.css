@@ -1,0 +1,97 @@
+/* Navbar */
+.navbar {
+  position: fixed;
+  top: 1rem;
+  left: 0;
+  right: 0;
+  z-index: 50;
+  max-width: 42rem;
+  margin: 0 auto;
+  padding: 0.5rem 1rem;
+  border-radius: 9999px;
+  backdrop-filter: blur(20px); /* Strong blur effect */
+  transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
+  background: rgba(255, 255, 255, 0.6); /* White with transparency */
+  box-shadow: 0px 10px 15px -3px rgba(0, 0, 0, 0.05), 
+              0px 4px 6px -4px rgba(0, 0, 0, 0.05);
+}
+
+/* Dark mode navbar */
+.dark .navbar {
+  background: rgba(31, 41, 55, 0.5); /* Dark with transparency */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+  border-color: rgba(255, 255, 255, 0.1); /* Dark border */
+}
+
+/* Navbar container */
+.container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+/* Nav List */
+.navList {
+  display: flex;
+  gap: 1.5rem;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+/* Nav Items */
+.navItem {
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: #374151; /* Dark gray in light mode */
+  transition: color 0.3s ease-in-out;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+/* Hover effect */
+.navItem:hover {
+  color: #3b82f6;
+}
+
+/* Dark mode nav text */
+.dark .navItem {
+  color: #ffffff;
+}
+
+.dark .navItem:hover {
+  color: #60a5fa;
+}
+
+/* Divider */
+.divider {
+  height: 1.5rem;
+  width: 1px;
+  background: rgba(255, 255, 255, 0.3);
+}
+
+/* Dark mode divider */
+.dark .divider {
+  background: rgba(255, 255, 255, 0.2);
+}
+
+/* Theme Toggle */
+.themeToggle {
+  background: none;
+  border: none;
+  cursor: pointer;
+  transition: transform 0.2s ease-in-out;
+}
+
+.themeToggle:hover {
+  transform: scale(1.1);
+}
+
+/* Icon - Yellow Border */
+.icon {
+  width: 1.5rem;
+  height: 1.5rem;
+  stroke: rgb(234 179 8); /* Yellow stroke */
+}

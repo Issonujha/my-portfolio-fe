@@ -1,0 +1,62 @@
+.rotatingContainer {
+  position: relative;
+  width: 200px;  /* Increased for better spacing */
+  height: 200px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.centerImage {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 3px solid gray;
+  position: absolute;
+  z-index: 2;
+  box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.3);
+}
+
+.centerImage img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.iconOrbit {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  animation: rotate 40s linear infinite;
+}
+
+.icon {
+  position: absolute;
+  width: 40px; /* Increased for visibility */
+  height: 40px;
+  transition: transform 0.3s ease-in-out;
+}
+
+/* Keep Icons Upright */
+.icon img {
+  width: 100%;
+  height: 100%;
+  transform: rotate(-360deg);
+}
+
+/* Adjust Positioning to Increase Spacing */
+/* Adjust Positioning to Ensure Even Spacing */
+.icon1 { top: -30px; left: 50%; transform: translateX(-50%); } /* Top */
+.icon2 { top: 20%; right: -5%; transform: translateY(-50%); } /* Upper Right */
+.icon3 { bottom: 20%; right: -5%; transform: translateY(50%); } /* Lower Right */
+.icon4 { bottom: -30px; left: 50%; transform: translateX(-50%); } /* Bottom */
+.icon5 { bottom: 20%; left: -5%; transform: translateY(50%); } /* Lower Left */
+.icon6 { top: 20%; left: -5%; transform: translateY(-50%); } /* Upper Left */
+
+
+/* Smooth Rotation */
+@keyframes rotate {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}

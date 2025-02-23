@@ -1,0 +1,21 @@
+:root {
+  --primary-gradient: linear-gradient(90deg, #4776e6 0%, #8e54e9 100%);
+  --bg-dark: #1a1b2e;
+  --bg-light: #ffffff;
+  --text-dark: #ffffff;
+  --text-light: #1a1b2e;
+  --nav-bg-dark: rgba(26, 27, 46, 0.8);
+  --nav-bg-light: rgba(255, 255, 255, 0.8);
+}
+
+.dark {
+  --bg: var(--bg-dark);
+  --text: var(--text-dark);
+  --nav-bg: var(--nav-bg-dark);
+}
+
+:root:not(.dark) {
+  --bg: var(--bg-light);
+  --text: var(--text-light);
+  --nav-bg: var(--nav-bg-light);
+}

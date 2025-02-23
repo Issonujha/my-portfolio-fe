@@ -1,0 +1,15 @@
+.container {
+  display: flex;
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.link {
+  color: var(--text);
+  opacity: 0.8;
+  transition: opacity 0.2s;
+}
+
+.link:hover {
+  opacity: 1;
+}
