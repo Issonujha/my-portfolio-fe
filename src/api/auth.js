@@ -1,3 +1,5 @@
+import { form } from "framer-motion/client";
+
 export async function loginUser(credentials) {
     const response = await fetch('http://localhost:8080/api/auth/login', {
         method: 'POST',
@@ -23,6 +25,11 @@ export const registerUser = async (formData) => {
 
 
 export const sendMail = async (formData) => {
-    const response = await await fetch('http://backend.sonujha.in/mail/send', formData);
-    return response.data;
+    await fetch('http://backend.sonujha.in/mail/send', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formData),
+    });
 };
