@@ -27,9 +27,6 @@ export const registerUser = async (formData) => {
 export const sendMail = async (formData) => {
     await fetch('http://backend.sonujha.in/mail/send', {
         method: 'POST',
-        headers: {
-            'Content-Type': 'application/json',
-        },
         body: JSON.stringify(formData),
     });
 };

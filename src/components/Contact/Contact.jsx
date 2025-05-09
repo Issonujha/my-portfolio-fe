@@ -4,9 +4,9 @@ import { sendMail } from '../../api/auth'; // Adjust the import path as necessar
 
 export const Contact = () => {
   const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    message: ''
+    subject: '',
+    to: '',
+    body: ''
   });
 
   const handleChange = (e) => {
@@ -35,7 +35,7 @@ export const Contact = () => {
         <form onSubmit={handleSubmit}>
           <input
             type="text"
-            name="name"
+            name="subject"
             placeholder="Enter your name"
             value={formData.name}
             onChange={handleChange}
@@ -43,14 +43,14 @@ export const Contact = () => {
           />
           <input
             type="email"
-            name="email"
+            name="to"
             placeholder="Enter your email address"
             value={formData.email}
             onChange={handleChange}
             required
           />
           <textarea
-            name="message"
+            name="body"
             placeholder="Go ahead, we are listening..."
             value={formData.message}
             onChange={handleChange}
