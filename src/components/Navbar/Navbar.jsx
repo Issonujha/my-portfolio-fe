@@ -1,22 +1,37 @@
 import React from "react";
 import styles from "./Navbar.module.css";
+import { Link } from "react-router-dom";
 import { useTheme } from "../../context/ThemeContext";
-import { StatusBar } from "../StatusBar/StatusBar";
+
+function toSlug(tab) {
+  return tab.toLowerCase().replace(/_/g, '-');
+}
+
 
 export function Navbar() {
     const { isDark, toggleTheme } = useTheme();
 
+    const tabs = ["home", "experience", "contact", "projects"];
+
     return (
         <>
-            <StatusBar />
             <header className={`${styles.navbar} ${isDark ? styles.dark : ""}`}>
                 <div className={styles.container}>
                     <nav>
                         <ul className={styles.navList}>
-                            <li><button className={styles.navItem}>Home</button></li>
-                            <li><button className={styles.navItem}>Experience</button></li>
-                            <li><button className={styles.navItem}>Contact</button></li>
-                            <li><button className={styles.navItem}>Projects</button></li>
+                            {tabs.map(tab => {
+                                const slug = toSlug(tab);
+                                return (
+                                    <li key={tab}>
+                                    <Link
+                                        to={`/${slug}`}
+                                        className={`${styles.navItem} ${styles.noUnderline}`}
+                                    >
+                                        {tab.replace(/_/g, " ").replace(/\b\w/g, l => l.toUpperCase())}
+                                    </Link>
+                                    </li>
+                                );
+                            })}
                         </ul>
                     </nav>
                     <div className={styles.divider}></div>

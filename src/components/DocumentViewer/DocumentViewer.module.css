@@ -1,0 +1,84 @@
+/* DocumentViewer.module.css */
+.viewerContainer {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  z-index: 1000;
+}
+
+.thumbnailView {
+  width: 25%; /* Adjust as needed */
+  border-right: 1px solid #eee;
+  padding: 20px;
+  overflow-y: auto; /* In case thumbnail content is long */
+}
+
+.thumbnailContent {
+  /* Styles for content inside the thumbnail view */
+}
+
+.thumbnailTitle {
+  font-size: 1.2rem;
+  margin-bottom: 10px;
+}
+
+.thumbnailImage {
+  max-width: 100%;
+  height: auto;
+  border-radius: 4px;
+}
+
+.largerView {
+  width: 75%; /* Adjust as needed */
+  display: flex;
+  flex-direction: column;
+}
+
+.expandedView {
+  width: 100%; /* When expanded, take full width */
+}
+
+.controls {
+  padding: 10px;
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+.controlButton {
+  padding: 5px 10px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 1rem;
+}
+
+.controlButton:hover {
+  /* background-color: #eee; */
+}
+
+.largerContent {
+  padding: 20px;
+  overflow-y: auto; /* For scrollable document content */
+}
+
+.largerContent h2 {
+  font-size: 1.8rem;
+  margin-bottom: 15px;
+}
+
+.largerContent p {
+  line-height: 1.6;
+  margin-bottom: 10px;
+}
+
+.largerContent img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 4px;
+  margin-bottom: 20px;
+}
+
+/* Add more styling for other content types in largerContent */
