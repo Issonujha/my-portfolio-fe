@@ -1,4 +1,4 @@
-import { form } from "framer-motion/client";
+
 
 export async function loginUser(credentials) {
     const response = await fetch('http://localhost:8080/api/auth/login', {
@@ -19,7 +19,11 @@ export async function loginUser(credentials) {
 }
 
 export const registerUser = async (formData) => {
-    const response = await fetch('http://localhost:8080/api/auth/signup', formData);
+    const response =
+        await fetch('http://backend.sonujha.in/customer/onboard', {
+            method: 'POST',
+            body: JSON.stringify(formData),
+        });
     return response.data;
 };
 

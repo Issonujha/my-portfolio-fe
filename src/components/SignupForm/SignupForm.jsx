@@ -3,7 +3,7 @@ import styles from './SignupForm.module.css';
 import { registerUser } from '../../api/auth';
 
 export const SignupForm = () => {
-  const [formData, setFormData] = useState({ username: '', email: '', password: '' });
+  const [formData, setFormData] = useState({ name: '', email: '', thumb: '' });
   const [error, setError] = useState('');
   const [success, setSuccess] = useState('');
 
@@ -31,7 +31,7 @@ export const SignupForm = () => {
       {success && <p className={styles.success}>{success}</p>}
       <input
         type="text"
-        name="username"
+        name="name"
         placeholder="Username"
         value={formData.username}
         onChange={handleChange}
@@ -48,8 +48,8 @@ export const SignupForm = () => {
         required
       />
       <input
-        type="password"
-        name="password"
+        type="text"
+        name="thumb"
         placeholder="Password"
         value={formData.password}
         onChange={handleChange}
