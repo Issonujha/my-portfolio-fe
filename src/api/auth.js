@@ -23,6 +23,7 @@ export const registerUser = async (formData) => {
         await fetch('http://backend.sonujha.in/customer/onboard', {
             method: 'POST',
             body: JSON.stringify(formData),
+            mode: "cors"
         });
     return response.data;
 };
@@ -32,5 +33,6 @@ export const sendMail = async (formData) => {
     await fetch('http://backend.sonujha.in/mail/send', {
         method: 'POST',
         body: JSON.stringify(formData),
+        mode: "cors"
     });
 };
