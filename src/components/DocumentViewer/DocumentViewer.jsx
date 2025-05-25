@@ -9,7 +9,7 @@ const DocumentViewer = ({ documentUrl, onClose }) => {
   const [documentData, setDocumentData] = useState({
     title: 'My Resume',
     sections: [
-      { type: 'pdf', url: 'https://firebasestorage.googleapis.com/v0/b/myportfolio-bb8f2.appspot.com/o/myfiles%2FResume%20PDF.pdf?alt=media&token=164f1404-9cd0-4963-809b-6eacf9bca0dc', alt: 'Contact Person' }
+      { type: 'pdf', url: 'https://www.jioaicloud.com/l/?u=pfbsZxpMHfMPTpYV4qwY1EuRe6pVQmKq8WKrbQgqLuQ=MHW', alt: 'Contact Person' }
     ],
   });
 
