@@ -9,7 +9,7 @@ const DocumentViewer = ({ documentUrl, onClose }) => {
   const [documentData, setDocumentData] = useState({
     title: 'My Resume',
     sections: [
-      { type: 'pdf', url: 'https://drive.google.com/file/d/13j58fvCicxwp_K1bNvUh4hVHZ4CtuWEJ/view', alt: 'Contact Person' }
+      { type: 'pdf', url: 'https://drive.google.com/file/d/13j58fvCicxwp_K1bNvUh4hVHZ4CtuWEJ/preview', alt: 'Contact Person' }
     ],
   });
 
@@ -53,7 +53,9 @@ const DocumentViewer = ({ documentUrl, onClose }) => {
                 <p dangerouslySetInnerHTML={{ __html: section.content }} />
               )}
               {section.type === 'pdf' && (
-                <embed src={section.url} width="700px" height="600px" className={styles.largerImage} />
+                
+                <iframe src={section.url} 
+                width="700px" height="800" allow="autoplay" className={styles.largerImage}></iframe>
               )}
               {/* Render other content types as needed */}
             </React.Fragment>
