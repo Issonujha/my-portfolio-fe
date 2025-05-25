@@ -31,6 +31,7 @@ export default function App() {
                 "Accept": "application/json",
                 "Authorization": `Bearer ${token}`
             },
+            credentials: 'include',
             mode: "cors"
         });
     if (!response.ok) {
