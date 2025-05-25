@@ -26,8 +26,11 @@ export default function App() {
       <main className="main-content">
       {selectedTab === "resume" && <DocumentViewer onClose={onClose} />}
       {selectedTab === "skills" && <Skills onClose={onClose} />}
+      {token === null ? <>
       {selectedTab === "login" && <LoginForm setSelectedTab={setSelectedTab} onLogin={setToken}/>}
-      {selectedTab === "signup" && <SignupForm setSelectedTab={setSelectedTab} onLogin={setToken}/>}
+      {selectedTab === "signup" && <SignupForm setSelectedTab={setSelectedTab}/>}</>
+      : <></>
+}
        {!selectedTab && 
        <Router>
       <Navbar/>
