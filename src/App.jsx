@@ -24,7 +24,7 @@ export default function App() {
 
   const isValidLogin = async () => {
     const response =
-        await fetch('/users/config', {
+        await fetch('https://backend.sonujha.in/users/config', {
             method: 'GET',
             headers: {
                 "Content-Type": "application/json",  // ✅ Must be JSON
