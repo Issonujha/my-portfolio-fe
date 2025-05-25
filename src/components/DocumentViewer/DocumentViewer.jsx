@@ -9,7 +9,7 @@ const DocumentViewer = ({ documentUrl, onClose }) => {
   const [documentData, setDocumentData] = useState({
     title: 'My Resume',
     sections: [
-      { type: 'pdf', url: 'https://drive.google.com/file/d/13j58fvCicxwp_K1bNvUh4hVHZ4CtuWEJ/view?usp=drive_link', alt: 'Contact Person' }
+      { type: 'pdf', url: 'https://drive.google.com/file/d/13j58fvCicxwp_K1bNvUh4hVHZ4CtuWEJ/view', alt: 'Contact Person' }
     ],
   });
 
