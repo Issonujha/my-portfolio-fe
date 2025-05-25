@@ -21,12 +21,49 @@ export default function App() {
   function onClose() {
     setSelectedTab(null);
   }
+
+  function isValidLogin(token) {
+    let response = fetch('https://backend.sonujha.in/users/config', {
+      method: 'GET',
+      headers: {
+        "Content-Type": "application/json",
+        "Accept": "application/json",
+        "Authorization": `Bearer ${token}`
+      }
+    });
+    response = response.then(res => res.json())
+    response = response.catch(err => {
+      console.error("Error validating token:", err);
+      return null;
+    });
+    response = response.then(data => {
+      if (data && data.success) {
+        return true;
+      } else {
+        return false;
+      }
+    }
+    );
+    response = response.catch(err => {
+      console.error("Error validating token:", err);
+      return false;
+    }
+    );
+    response = response.then(valid => {
+      if (valid) {
+        localStorage.setItem('token', token);
+      }
+      return valid;
+    }
+    );
+  }
+
   return (
     <ThemeProvider>
       <main className="main-content">
       {selectedTab === "resume" && <DocumentViewer onClose={onClose} />}
       {selectedTab === "skills" && <Skills onClose={onClose} />}
-      {token === null ? <>
+      {token === null || !isValidLogin(token) ? <>
       {selectedTab === "login" && <LoginForm setSelectedTab={setSelectedTab} onLogin={setToken}/>}
       {selectedTab === "signup" && <SignupForm setSelectedTab={setSelectedTab}/>}</>
       : <></>
