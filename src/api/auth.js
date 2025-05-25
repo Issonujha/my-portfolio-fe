@@ -12,10 +12,6 @@ export async function loginUser(credentials) {
     });
     const data = await response.json();
     console.log(data);
-    localStorage.setItem('hello', "Hello World"); // optional
-    if (!response.ok) {
-        throw new Error('Login failed');
-    }
     localStorage.setItem('token', data.jwtToken); // optional
     return data.jwtToken;
 }
