@@ -18,7 +18,6 @@ export const Contact = () => {
   };
 
   const handleSubmit = async (e) => {
-    e.preventDefault();
     // Handle form submission logic here\
         try {
           await sendMail(formData);
