@@ -1,13 +1,14 @@
 
 
 export async function loginUser(credentials) {
-    const response = await fetch('http://backend.sonujha.in/auth/login', {
+    const response = await fetch('https://backend.sonujha.in/auth/login', {
         method: 'POST',
         headers: {
             "Content-Type": "application/json",  // ✅ Must be JSON
             "Accept": "application/json"
         },
         body: JSON.stringify(credentials),
+        mode: "cors"
     });
     const data = await response.json();
     console.log(data);
@@ -17,7 +18,7 @@ export async function loginUser(credentials) {
 
 export const registerUser = async (formData) => {
     const response =
-        await fetch('http://backend.sonujha.in/customer/onboard', {
+        await fetch('https://backend.sonujha.in/customer/onboard', {
             method: 'POST',
             headers: {
                 "Content-Type": "application/json",  // ✅ Must be JSON
@@ -31,7 +32,7 @@ export const registerUser = async (formData) => {
 
 
 export const sendMail = async (formData) => {
-    await fetch('http://backend.sonujha.in/mail/send', {
+    await fetch('https://backend.sonujha.in/mail/send', {
         method: 'POST',
         body: JSON.stringify(formData),
         headers: {
