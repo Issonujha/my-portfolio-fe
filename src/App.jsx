@@ -22,40 +22,25 @@ export default function App() {
     setSelectedTab(null);
   }
 
-  function isValidLogin(token) {
-    let response = fetch('https://backend.sonujha.in/users/config', {
-      method: 'GET',
-      headers: {
-        "Content-Type": "application/json",
-        "Accept": "application/json",
-        "Authorization": `Bearer ${token}`
-      }
-    });
-    response = response.then(res => res.json())
-    response = response.catch(err => {
-      console.error("Error validating token:", err);
-      return null;
-    });
-    response = response.then(data => {
-      if (data && data.success) {
-        return true;
-      } else {
-        return false;
-      }
-    }
-    );
-    response = response.catch(err => {
-      console.error("Error validating token:", err);
+  const isValidLogin = async () => {
+    const response =
+        await fetch('/users/config', {
+            method: 'GET',
+            headers: {
+                "Content-Type": "application/json",  // ✅ Must be JSON
+                "Accept": "application/json",
+                "Authorization": `Bearer ${token}`
+            },
+            mode: "cors"
+        });
+    if (!response.ok) {
+      console.error("Invalid token or user not authenticated");
+      setToken(null);
+      localStorage.removeItem('token');
       return false;
     }
-    );
-    response = response.then(valid => {
-      if (valid) {
-        localStorage.setItem('token', token);
-      }
-      return valid;
-    }
-    );
+    response.data = await response.json();
+    return response.data.s;
   }
 
   return (
@@ -63,7 +48,7 @@ export default function App() {
       <main className="main-content">
       {selectedTab === "resume" && <DocumentViewer onClose={onClose} />}
       {selectedTab === "skills" && <Skills onClose={onClose} />}
-      {token === null || !isValidLogin(token) ? <>
+      {token === null || !isValidLogin() ? <>
       {selectedTab === "login" && <LoginForm setSelectedTab={setSelectedTab} onLogin={setToken}/>}
       {selectedTab === "signup" && <SignupForm setSelectedTab={setSelectedTab}/>}</>
       : <></>
