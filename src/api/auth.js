@@ -12,7 +12,7 @@ export async function loginUser(credentials) {
     });
     const data = await response.json();
     console.log(data);
-    localStorage.setItem('token', data.jwtToken); // optional
+    sessionStorage.setItem('token', data.jwtToken); // optional
     return data.jwtToken;
 }
 

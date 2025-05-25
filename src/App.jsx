@@ -17,7 +17,7 @@ import { SignupForm } from "./components/SignupForm/SignupForm"
 
 export default function App() {
   const [selectedTab, setSelectedTab] = useState();
-  const [token, setToken] = useState(localStorage.getItem('token') || null);
+  const [token, setToken] = useState(sessionStorage.getItem('token') || null);
   function onClose() {
     setSelectedTab(null);
   }
