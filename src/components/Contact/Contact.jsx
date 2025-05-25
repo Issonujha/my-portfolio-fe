@@ -25,6 +25,11 @@ export const Contact = () => {
         } catch (err) {
         }
     console.log(formData);
+    setFormData({
+      subject: '',
+      to: '',
+      body: ''
+    });
   };
 
   return (
