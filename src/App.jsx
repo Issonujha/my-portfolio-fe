@@ -62,9 +62,10 @@ export default function App() {
         <Routes>
           <Route path="/" element={<><Profile /><Social /></>} />
           <Route path="/home" element={<><Profile /><Social /></>} />
-          <Route path="experience" element={<Experience />} />
-          <Route path="contact" element={<Contact />} />
-          <Route path="projects" element={<Projects />} />
+          <Route path="/experience" element={<Experience />} />
+          <Route path="/contact" element={<Contact />} />
+          <Route path="/projects" element={<Projects />} />
+          <Route path="/services" element={<Services />} />
           <Route path="services" element={<Services />} />
         </Routes>
       </Router>}
