@@ -11,7 +11,7 @@ function toSlug(tab) {
 export function Navbar() {
     const { isDark, toggleTheme } = useTheme();
 
-    const tabs = ["home", "experience", "contact", "projects"];
+    const tabs = ["home", "services", "experience", "contact", "projects"];
 
     return (
         <>

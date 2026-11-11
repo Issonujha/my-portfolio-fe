@@ -14,6 +14,7 @@ import DocumentViewer from "./components/DocumentViewer/DocumentViewer"
 import Skills from "./components/Skills/Skills"
 import { LoginForm } from "./components/Login/LoginForm"
 import { SignupForm } from "./components/SignupForm/SignupForm"
+import { Services } from "./components/Services/Services"
 
 export default function App() {
   const [selectedTab, setSelectedTab] = useState();
@@ -64,6 +65,7 @@ export default function App() {
           <Route path="experience" element={<Experience />} />
           <Route path="contact" element={<Contact />} />
           <Route path="projects" element={<Projects />} />
+          <Route path="services" element={<Services />} />
         </Routes>
       </Router>}
      <Tools onTabChange={setSelectedTab}/>
