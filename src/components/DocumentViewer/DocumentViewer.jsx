@@ -6,7 +6,7 @@ const DocumentViewer = ({ documentUrl, onClose }) => {
   const viewerRef = useRef(null);
 
   // In a real application, you would fetch the document data based on documentUrl
-  const [documentData, setDocumentData] = useState({
+  const [documentData] = useState({
     title: 'My Resume',
     sections: [
       { type: 'pdf', url: 'https://drive.google.com/file/d/13j58fvCicxwp_K1bNvUh4hVHZ4CtuWEJ/preview', alt: 'Contact Person' }
@@ -53,9 +53,14 @@ const DocumentViewer = ({ documentUrl, onClose }) => {
                 <p dangerouslySetInnerHTML={{ __html: section.content }} />
               )}
               {section.type === 'pdf' && (
-                
-                <iframe src={section.url} 
-                width="700px" height="800" allow="autoplay" className={styles.largerImage}></iframe>
+                <iframe
+                  title={documentData.title || "Document Preview"}
+                  src={section.url} 
+                  width="700px"
+                  height="800"
+                  allow="autoplay"
+                  className={styles.largerImage}
+                />
               )}
               {/* Render other content types as needed */}
             </React.Fragment>
